@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddTodo({ inputText, setInputText, todos, setTodos, setStatus }) {
+function AddTodo({ inputText, setInputText, todos, setTodos }) {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
@@ -12,9 +12,7 @@ function AddTodo({ inputText, setInputText, todos, setTodos, setStatus }) {
     ]);
     setInputText("");
   };
-  const statusHandler = (e) => {
-    setStatus(e.target.innerHTML);
-  };
+
   return (
     <div>
       <form>
@@ -23,17 +21,6 @@ function AddTodo({ inputText, setInputText, todos, setTodos, setStatus }) {
           Add List
         </button>
         <br></br>
-        <span key="All" onClick={statusHandler} value="All">
-          All
-        </span>{" "}
-        ||
-        <span key="Completed" value="Completed" onClick={statusHandler}>
-          Completed
-        </span>{" "}
-        ||
-        <span key="Uncompleted" value="Uncompleted" onClick={statusHandler}>
-          Uncompleted
-        </span>
       </form>
     </div>
   );
